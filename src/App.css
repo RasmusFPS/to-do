@@ -1,0 +1,174 @@
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(29, 28, 28);
+  color: rgb(223, 221, 219);
+  margin:0;
+  padding:0;
+}
+
+.nav{
+  display:flex;
+  font-family: Cascadia Code;
+  font-size: 32px;
+  justify-content: center;
+  background-color: whitesmoke;
+  color:black;
+  height: 50px;
+  margin-bottom: 14px;
+  border-bottom: 3px solid black;
+}
+
+.search-section{
+  display:flex;
+  justify-content: center;
+}
+
+.add-button{
+    background-color: #1163e7;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-button:hover{
+  background-color: #0248b9;
+}
+
+.search-input{
+  width: 20rem;
+  padding: 14px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-right: 1px;
+}
+
+.app-container {
+    margin: 0;
+    font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Container for the whole list */
+.todo-items {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+/* The Card */
+.Todo-card {
+  background-color: #f0ffff; /* Azure */
+  color: #000000;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+
+  /* This keeps everything in a neat line */
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0f0f0;
+  transition: transform 0.2s ease;
+}
+
+.Todo-card:hover {
+  transform: scale(1.02);
+}
+
+/* The Text part */
+.Todo-card p {
+  font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: 16px; /* Added px */
+  margin: 0;
+  flex-grow: 1; /* This pushes the delete button to the right */
+  padding: 0 15px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* --- REMOVE BUTTON --- */
+.remove-btn {
+  background-color: #720b0b;
+  color: #fdefef;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #d63031;
+  box-shadow: 0 2px 8px rgba(214, 48, 49, 0.4);
+}
+
