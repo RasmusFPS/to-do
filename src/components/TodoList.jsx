@@ -15,7 +15,7 @@ function TodoList() {
 
     function handleAddTodo(newTodoText) {
         if (newTodoText.trim() !== "") {
-            setTodos([...todos, newTodo]);
+            setTodos([...todos, newTodoText]);  
         }
     }
 
