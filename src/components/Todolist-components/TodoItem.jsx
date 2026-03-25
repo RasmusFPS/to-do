@@ -1,18 +1,14 @@
-import React, { use } from 'react'
-import { useState } from 'react'
 import TodoInput from './TodoInput'
 
-function TodoItem({ task,number, onDelete }) {
-
-  const [isChecked, setIsChecked] = useState(false);
+function TodoItem({ task,number,completed, onDelete,onToggle }) {
 
   return (
     <div className="Todo-card">
-      <p style={{textDecoration: isChecked ? "line-through" : "none"}}>
+      <p style={{textDecoration: completed ? "line-through" : "none"}}>
         <span>{number +1}.</span>{task}
       </p>
       <label className="container">
-      <input type="checkbox" onChange={() => setIsChecked(!isChecked)}/>
+      <input type="checkbox" checked={completed} onChange={() => onToggle(number)}/>
     <span className="checkmark"></span>
 </label>
       <button className="remove-btn" id={number} onClick={() => onDelete(number)}>remove</button>

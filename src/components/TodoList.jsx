@@ -15,7 +15,8 @@ function TodoList() {
 
     function handleAddTodo(newTodoText) {
         if (newTodoText.trim() !== "") {
-            setTodos([...todos, newTodoText]);  
+            const newEntry = { text: newTodoText, completed: false};
+            setTodos([...todos, newEntry]);  
         }
     }
 
@@ -23,6 +24,17 @@ function TodoList() {
         const copyTodo = [...todos];
         copyTodo.splice(indexToRemove, 1);
         setTodos(copyTodo);
+    }
+
+    function isCompleted(index){
+    const copy = [...todos];
+    if(copy[index].completed == true){
+        copy[index].completed = false;
+    }
+    else{
+        copy[index].completed = true;
+    }
+    setTodos(copy)
     }
 
 return (
@@ -35,9 +47,11 @@ return (
             {todos.map((item, index) => (
                 <TodoItem 
                 key={index} 
-                task={item} 
+                task={item.text} 
+                completed={item.completed}
                 number={index}
                 onDelete={removeTodo}
+                onToggle={isCompleted}
                 />
             ))}
         </div>
