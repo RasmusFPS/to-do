@@ -11,9 +11,9 @@ function TodoItem({ task,number, onDelete }) {
       <p style={{textDecoration: isChecked ? "line-through" : "none"}}>
         <span>{number +1}.</span>{task}
       </p>
-      <label class="container">
+      <label className="container">
       <input type="checkbox" onChange={() => setIsChecked(!isChecked)}/>
-    <span class="checkmark"></span>
+    <span className="checkmark"></span>
 </label>
       <button className="remove-btn" id={number} onClick={() => onDelete(number)}>remove</button>
     </div>
